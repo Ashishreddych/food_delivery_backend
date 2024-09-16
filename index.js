@@ -8,7 +8,7 @@ const bodyParser = require('body-parser');
 const path = require('path')
 
 const app = express();
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 
 
 // Load environment variables
@@ -18,7 +18,7 @@ mongoose.connect(process.env.MONGO_URL)
     .then(() => console.log("MONGODB connected successfully"))
     .catch((error) => console.log(error));
 // Simple route for testing
-app.use('/home', (req, res) => {
+app.use('/', (req, res) => {
     res.send("Welcome");
 });
 
