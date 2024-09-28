@@ -8,6 +8,9 @@ const router = express.Router();
 // Apply verifyToken middleware and route to add firm
 router.post('/add-firm', verifyToken, firmController.addFirm);
 
+
+
+
 router.get('/uploads/:imageName', (req, res) => {
     const imageName = req.params.imageName;
     res.setHeader('Content-Type', 'image/jpeg');  // Fix: Correct method name is setHeader
